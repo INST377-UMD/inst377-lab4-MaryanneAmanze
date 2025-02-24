@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="INST377_MAmanze_Lab4.css">
+    </head>
+
+    <body>
+        <div class="main-container">
+            <h1>INST377 - Lab 4</h1>
+            <div class="content-area">
+                <div class="right-section">
+                    <div class="content-box">
+                        <form name="nameForm" onsubmit="return formNameValidation()">
+                            <label for = "Name"> Name: </label>
+                            <input type="text" id="Name" name="Name" required>
+                            <br>
+                            <input type="submit" value="Alert Me!">
+                        </form>            
+                    </div>
+                    <div class="content-box">
+                        <form name="textTester" onsubmit="return formTextValidation()">
+                            <label for = "Tester"> Text Tester: </label>
+                            <input type="text" id="Tester" required>
+                            <br>
+                            <input type="submit" value="Validate Text">
+                        </form>  
+                    </div>
+                </div>
+        
+                <div class="left-section">
+                    <div class="content-box">
+                        <button onclick="changeColor()">Change Color</button>
+                    </div>
+                    <div class="content-box">
+                        <button onclick="addText()">Add Text</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Javascript Code -->
+        <script type="text/javascript">
+            function formNameValidation() {
+                const name = document.nameForm.Name.value.trim();
+                console.log('Validating user input:', name);
+
+                if (name === "") {
+                    alert("Please enter your name!");
+                    return false;
+                }
+
+                alert(`Hi ${name}!`);
+                return true;
+            }
+            function formTextValidation() {
+                console.log('Validating user input:', document.textTester.Tester.value)
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                if (validationRegex.test(document.textTester.Tester.value)) {
+                    alert('How about..... nah :(')
+
+                    return false;
+                }
+
+            }
+            let isBlue = false;
+            function changeColor() {
+            if (isBlue) {
+                document.body.style.backgroundColor = "purple";
+            } else {
+                document.body.style.backgroundColor = "lightblue";
+            }
+            isBlue = !isBlue;
+            }
+
+            function addText() {
+                let heading = document.querySelector("h1");
+                heading.innerText += " - New text added!";
+                
+            }
+        </script>
+    </body>
+</html>
