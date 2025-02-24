@@ -1,0 +1,40 @@
+body{
+    background-color:lightblue;
+}
+
+.main-container {
+    text-align: center;
+}
+.content-area{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    padding: 20px;
+}
+
+.content-box{
+    background-color:plum ;
+    color: black;
+    border: 5px solid brown;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 7px;
+    
+}
+
+.left-section {
+    width: 48%; 
+    align-items: center;
+    
+}
+
+.right-section {
+    width: 48%;
+    
+}
+
+button {
+    display: block;
+    
+}
